@@ -10,11 +10,14 @@
     <meta property="og:title" content="Bawat Tala" />
     <meta property="og:description" content="A softer space for your thoughts." />
     <meta property="og:image" content="assets/images/BT_Logo.png" />
+    <meta name="theme-color" content="#2d7d5a" />
     <title>Bawat Tala | A softer space for your thoughts</title>
     <link rel="icon" href="assets/images/Tala_Star.png" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div class="scroll-progress" aria-hidden="true"></div>
+
     <header class="site-header">
       <a class="brand" href="#top" aria-label="Bawat Tala home">
         <img src="assets/images/Tala_Star.png" alt="" />
@@ -37,6 +40,11 @@
         <div class="hero-background">
           <img class="hero-scene" src="assets/images/Beach.png" alt="" />
           <div class="hero-scrim"></div>
+          <div class="sky-lanes" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
           <div class="hero-stars" aria-hidden="true">
             <img class="float-star star-one" src="assets/images/Tala_Star.png" alt="" />
             <img class="float-star star-two" src="assets/images/Tala_Star.png" alt="" />
@@ -60,8 +68,21 @@
             <span>Muni</span>
             <span>Wellness tools</span>
           </div>
+          <div class="launch-strip" aria-label="Release information">
+            <strong>APK ready</strong>
+            <span>Google Drive mirror</span>
+            <span>Android build</span>
+          </div>
           <div class="hero-actions" aria-label="Primary actions">
-            <a class="button primary" href="#download">Download the app</a>
+            <a
+              class="button primary"
+              href="https://drive.google.com/uc?export=download&id=1Df-ZsShPj6qlQ-H5uWXMkdP-pU9xkrPB"
+              target="_blank"
+              rel="noopener"
+              data-apk-download
+            >
+              Download APK
+            </a>
             <a class="button secondary" href="#features">Explore features</a>
           </div>
         </div>
@@ -209,18 +230,32 @@
           </div>
         </div>
         <div class="download-panel">
+          <img class="download-star star-a" src="assets/images/Tala_Star.png" alt="" />
+          <img class="download-star star-b" src="assets/images/Tala_Star.png" alt="" />
           <span class="download-badge">Android APK</span>
           <img src="assets/images/BT_Logo.png" alt="Bawat Tala logo" />
+          <div class="download-meta" aria-label="Download source">
+            <span>Latest build</span>
+            <span>Google Drive</span>
+          </div>
           <a
             class="button primary download-button"
-            href="https://github.com/rakiroo/BawaTala-Website/releases/latest/download/BawaTala.apk"
+            href="https://drive.google.com/uc?export=download&id=1Df-ZsShPj6qlQ-H5uWXMkdP-pU9xkrPB"
+            target="_blank"
+            rel="noopener"
+            data-apk-download
           >
             Download Android APK
           </a>
-          <a class="button quiet" href="mailto:hello@bawattala.app?subject=Bawat%20Tala%20App%20Access">
-            Request app access
+          <a
+            class="button quiet"
+            href="https://drive.google.com/file/d/1Df-ZsShPj6qlQ-H5uWXMkdP-pU9xkrPB/view?usp=drive_link"
+            target="_blank"
+            rel="noopener"
+          >
+            Open Google Drive
           </a>
-          <p class="download-note">Android install package for Bawat Tala.</p>
+          <p class="download-note">Hosted as the current Android install package for Bawat Tala.</p>
         </div>
       </section>
     </main>

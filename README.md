@@ -15,10 +15,16 @@ Standalone static website for the Bawat Tala app fandom, advertising, and downlo
 The download button points to:
 
 ```text
-downloads/BawatTala.apk
+https://drive.google.com/uc?export=download&id=1Df-ZsShPj6qlQ-H5uWXMkdP-pU9xkrPB
 ```
 
-When you have the Android build, place the APK there with that filename. If you later publish to Google Play or another host, replace the `href` on the download button in `index.html`.
+The secondary Drive button opens the file preview:
+
+```text
+https://drive.google.com/file/d/1Df-ZsShPj6qlQ-H5uWXMkdP-pU9xkrPB/view?usp=drive_link
+```
+
+If you later publish to Google Play or another host, replace the download URL in `index.html` and `script.js`.
 
 ## Publishing
 

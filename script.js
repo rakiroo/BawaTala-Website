@@ -3,11 +3,14 @@ document.documentElement.classList.add("js");
 const header = document.querySelector(".site-header");
 const menuButton = document.querySelector(".menu-button");
 const navLinks = document.querySelectorAll(".site-nav a");
+const heroSection = document.querySelector(".hero-section");
 const rotatingQuote = document.querySelector("#rotating-quote");
-const downloadButton = document.querySelector(".download-button");
+const apkDownloadLinks = document.querySelectorAll("[data-apk-download]");
 const revealItems = document.querySelectorAll(".reveal");
 const tiltCards = document.querySelectorAll(".tilt-card");
 const motionAllowed = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const apkFileId = "1Df-ZsShPj6qlQ-H5uWXMkdP-pU9xkrPB";
+const apkDownloadUrl = `https://drive.google.com/uc?export=download&id=${apkFileId}`;
 
 const quotes = [
   "Small steps still count, especially on heavy days.",
@@ -17,6 +20,11 @@ const quotes = [
 ];
 
 let quoteIndex = 0;
+
+apkDownloadLinks.forEach((link) => {
+  link.href = apkDownloadUrl;
+  link.setAttribute("aria-label", "Download Bawat Tala Android APK from Google Drive");
+});
 
 menuButton?.addEventListener("click", () => {
   const isOpen = header?.classList.toggle("nav-open") ?? false;
@@ -32,6 +40,10 @@ navLinks.forEach((link) => {
 
 const syncHeaderState = () => {
   header?.classList.toggle("is-scrolled", window.scrollY > 20);
+
+  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = maxScroll > 0 ? (window.scrollY / maxScroll) * 100 : 0;
+  document.documentElement.style.setProperty("--scroll-progress", `${Math.min(progress, 100)}%`);
 };
 
 syncHeaderState();
@@ -94,6 +106,20 @@ if (motionAllowed && rotatingQuote) {
 }
 
 if (motionAllowed && window.matchMedia("(pointer: fine)").matches) {
+  heroSection?.addEventListener("pointermove", (event) => {
+    const rect = heroSection.getBoundingClientRect();
+    const x = (event.clientX - rect.left) / rect.width - 0.5;
+    const y = (event.clientY - rect.top) / rect.height - 0.5;
+
+    heroSection.style.setProperty("--hero-drift-x", `${x * 18}px`);
+    heroSection.style.setProperty("--hero-drift-y", `${y * 18}px`);
+  });
+
+  heroSection?.addEventListener("pointerleave", () => {
+    heroSection.style.setProperty("--hero-drift-x", "0px");
+    heroSection.style.setProperty("--hero-drift-y", "0px");
+  });
+
   tiltCards.forEach((card) => {
     card.addEventListener("pointermove", (event) => {
       const rect = card.getBoundingClientRect();
@@ -110,9 +136,3 @@ if (motionAllowed && window.matchMedia("(pointer: fine)").matches) {
     });
   });
 }
-
-downloadButton?.addEventListener("click", () => {
-  window.setTimeout(() => {
-    console.info("If the download did not start, add your app build at downloads/BawatTala.apk.");
-  }, 300);
-});
