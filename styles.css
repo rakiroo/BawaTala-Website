@@ -459,13 +459,16 @@ h3 {
 }
 
 .phone-screen {
-  min-height: 622px;
+  aspect-ratio: 511 / 912;
   overflow: hidden;
   border-radius: 30px;
-  padding: 18px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(255, 253, 246, 0.96)),
-    url("assets/images/Garden.png") center / cover;
+  background: #fbfbf6;
+}
+
+.phone-home {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .phone-status {
