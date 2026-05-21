@@ -8,20 +8,14 @@ Standalone static website for the Bawat Tala app fandom, advertising, and downlo
 - `styles.css` contains the responsive design.
 - `script.js` handles the mobile menu and rotating community quote.
 - `assets/images/` contains copied Bawat Tala app artwork.
-- `downloads/` is where the release app file should go.
+- `downloads/` is reserved for local release files if needed.
 
 ## App Download
 
 The download button points to:
 
 ```text
-https://drive.google.com/uc?export=download&id=1Df-ZsShPj6qlQ-H5uWXMkdP-pU9xkrPB
-```
-
-The secondary Drive button opens the file preview:
-
-```text
-https://drive.google.com/file/d/1Df-ZsShPj6qlQ-H5uWXMkdP-pU9xkrPB/view?usp=drive_link
+https://drive.google.com/file/d/1DLz9EQrfIxFSg4zzLhIh3scmgEUEiCyy/view?usp=sharing
 ```
 
 If you later publish to Google Play or another host, replace the download URL in `index.html` and `script.js`.
