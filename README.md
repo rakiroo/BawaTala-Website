@@ -15,7 +15,7 @@ Standalone static website for the Bawat Tala app fandom, advertising, and downlo
 The download button points to:
 
 ```text
-https://drive.google.com/file/d/1DLz9EQrfIxFSg4zzLhIh3scmgEUEiCyy/view?usp=sharing
+https://drive.google.com/file/d/15pxspAi81wSrqH_HUuQAOCyPeV8d36X7/view?usp=drive_link
 ```
 
 If you later publish to Google Play or another host, replace the download URL in `index.html` and `script.js`.

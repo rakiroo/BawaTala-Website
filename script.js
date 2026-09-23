@@ -8,7 +8,7 @@ const apkDownloadLinks = document.querySelectorAll("[data-apk-download]");
 const revealItems = document.querySelectorAll(".reveal");
 const tiltCards = document.querySelectorAll(".tilt-card");
 const motionAllowed = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-const apkDownloadUrl = "https://drive.google.com/file/d/1DLz9EQrfIxFSg4zzLhIh3scmgEUEiCyy/view?usp=sharing";
+const apkDownloadUrl = "https://drive.google.com/file/d/15pxspAi81wSrqH_HUuQAOCyPeV8d36X7/view?usp=drive_link";
 
 const quotes = [
   "Small steps still count, especially on heavy days.",
