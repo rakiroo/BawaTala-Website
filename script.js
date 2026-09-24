@@ -116,3 +116,188 @@ if (motionAllowed && window.matchMedia("(pointer: fine)").matches) {
     });
   });
 }
+
+// Interactive Feature Tabs
+document.addEventListener('DOMContentLoaded', () => {
+  const tabs = document.querySelectorAll('.feature-tab');
+  const panes = document.querySelectorAll('.feature-pane');
+
+  if(tabs.length > 0) {
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Remove active class from all
+        tabs.forEach(t => t.classList.remove('active'));
+        panes.forEach(p => p.classList.remove('active'));
+
+        // Add active class to clicked tab
+        tab.classList.add('active');
+
+        // Show corresponding pane
+        const targetId = tab.getAttribute('data-target');
+        const targetPane = document.getElementById(targetId);
+        if(targetPane) {
+          targetPane.classList.add('active');
+        }
+      });
+    });
+  }
+});
+
+// Mini Journal Interaction
+document.addEventListener('DOMContentLoaded', () => {
+  const saveBtn = document.getElementById('mini-journal-btn');
+  const input = document.getElementById('mini-journal-input');
+  const response = document.getElementById('mini-journal-response');
+
+  if (saveBtn && input && response) {
+    saveBtn.addEventListener('click', () => {
+      const text = input.value.trim();
+      if (text.length > 0) {
+        saveBtn.innerText = 'Saving...';
+        saveBtn.style.opacity = '0.7';
+        
+        // Simulate soft delay like the app
+        setTimeout(() => {
+          response.innerHTML = '<i>? Your thought has been gently safely tucked away.</i><br><br><span style="font-size:14px; color:#506864; font-weight:normal;">Muni is proud of you for sharing.</span>';
+          response.classList.add('show');
+          
+          setTimeout(() => {
+            input.value = '';
+            response.classList.remove('show');
+            saveBtn.innerText = 'Save to your stars';
+            saveBtn.style.opacity = '1';
+          }, 4000);
+        }, 800);
+      } else {
+        input.focus();
+        input.placeholder = "Try writing just one small thought first...";
+      }
+    });
+  }
+});
+// Full Journal Spread Interactions
+document.addEventListener('DOMContentLoaded', () => {
+  const muniText = document.getElementById('muni-typing-text');
+  if (muniText) {
+    const textToType = "It's okay if today was heavy. I'm here to listen.";
+    let i = 0;
+    
+    // Typewriter effect
+    setTimeout(() => {
+      const typeInterval = setInterval(() => {
+        muniText.innerText = textToType.substring(0, i);
+        i++;
+        if (i > textToType.length) {
+          clearInterval(typeInterval);
+          muniText.style.borderRight = "none";
+        }
+      }, 70);
+    }, 1000);
+
+    const saveBtn = document.getElementById('main-journal-btn');
+    const input = document.getElementById('main-journal-input');
+    const response = document.getElementById('main-journal-response');
+
+    if(saveBtn) {
+        saveBtn.addEventListener('click', () => {
+          if (input.value.trim().length > 0) {
+            saveBtn.innerText = 'Saving...';
+            saveBtn.style.opacity = '0.7';
+            
+            setTimeout(() => {
+              response.innerHTML = '<i>? Your thought has been softly tucked away into the stars.</i><br><br><span style="font-size:16px; color:#506864; font-family:sans-serif; font-weight:normal;">Muni is proud of you for sharing.</span>';
+              response.classList.add('show');
+              
+              setTimeout(() => {
+                input.value = '';
+                response.classList.remove('show');
+                saveBtn.innerText = 'Save to your stars';
+                saveBtn.style.opacity = '1';
+              }, 4000);
+            }, 800);
+          } else {
+            input.focus();
+            input.placeholder = "Take a breath, and write even just a single word...";
+          }
+        });
+    }
+  }
+});
+
+// FAQ Typing Animation
+document.addEventListener('DOMContentLoaded', () => {
+  const faqText = document.getElementById('faq-typing-text');
+  if (faqText) {
+    const textToType = "I'm here to answer your questions.";
+    let i = 0;
+    
+    // Typewriter effect triggered by Intersection Observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          setTimeout(() => {
+            const typeInterval = setInterval(() => {
+              faqText.innerText = textToType.substring(0, i);
+              i++;
+              if (i > textToType.length) {
+                clearInterval(typeInterval);
+                faqText.style.borderRight = "none";
+              }
+            }, 60);
+          }, 500);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    
+    observer.observe(faqText);
+  }
+});
+
+
+
+
+
+// Interactive Muni Wardrobe - Flying Clothes (Hitbox Model)
+document.addEventListener('DOMContentLoaded', () => {
+  const hitboxes = document.querySelectorAll('.outfit-hitbox');
+  const outfits = document.querySelectorAll('.floating-outfit');
+
+  if(hitboxes.length > 0) {
+    hitboxes.forEach(hitbox => {
+      
+      const targetId = hitbox.getAttribute('data-target');
+      const targetOutfit = document.getElementById(targetId);
+
+      const wearOutfit = () => {
+        outfits.forEach(o => {
+          if(o !== targetOutfit) o.classList.remove('wearing');
+        });
+        targetOutfit.classList.add('wearing');
+      };
+
+      hitbox.addEventListener('mouseenter', wearOutfit);
+      
+      hitbox.addEventListener('mouseleave', () => {
+        targetOutfit.classList.remove('wearing');
+      });
+      
+      hitbox.addEventListener('touchstart', (e) => {
+        if(targetOutfit.classList.contains('wearing')) {
+          targetOutfit.classList.remove('wearing');
+        } else {
+          wearOutfit();
+        }
+      });
+    });
+    
+    document.addEventListener('touchstart', (e) => {
+      if(!e.target.closest('.outfit-hitbox')) {
+        outfits.forEach(o => o.classList.remove('wearing'));
+      }
+    });
+  }
+});
+
+
+

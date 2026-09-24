@@ -27,7 +27,7 @@
       <nav class="site-nav" aria-label="Main navigation">
         <a href="#features">Features</a>
         <a href="#muni">Muni</a>
-        <a href="#community">Community</a>
+        
         <a href="#download">Download</a>
       </nav>
     </header>
@@ -53,13 +53,9 @@
           <p class="eyebrow">Student wellness companion</p>
           <h1 id="hero-title">Bawat Tala</h1>
           <p class="hero-copy">
-            A softer space for your thoughts, moods, quiet wins, and the small moments that help you keep going.
+            A softer space for your thoughts, moods, quiet wins, gentle games, and the small moments that help you keep going.
           </p>
-          <div class="hero-badges" aria-label="Bawat Tala highlights">
-            <span>Journal</span>
-            <span>Muni</span>
-            <span>Wellness tools</span>
-          </div>
+          
           <div class="hero-actions" aria-label="Primary actions">
             <a class="button primary" href="#download">Download the app</a>
             <a class="button secondary" href="#features">Explore features</a>
@@ -77,122 +73,182 @@
         </div>
       </section>
 
-      <section class="story-band reveal">
-        <div class="story-copy">
+      
+      
+      
+      
+      <section class="muni-story-section immersive-muni" id="story">
+        <div class="immersive-bg-glow"></div>
+
+        <div class="story-header reveal">
           <p class="eyebrow">Why it exists</p>
           <h2>For days when students need a place to pause first.</h2>
         </div>
-        <div class="story-stack">
-          <p>
-            Bawat Tala brings together reflective journaling, mood check-ins, guided wellness tools, reading, and
-            counseling access in one friendly campus-centered app.
-          </p>
-          <div class="story-stats" aria-label="Core app spaces">
-            <span><strong>01</strong> Journal</span>
-            <span><strong>02</strong> Wellness</span>
-            <span><strong>03</strong> Support</span>
+        
+        <div class="immersive-muni-layout reveal">
+          
+          <div class="immersive-text-left">
+            <p class="eyebrow">Meet Muni</p>
+            <h3>A companion for reflection.</h3>
+            <p>Muni helps you turn scattered thoughts into gentler summaries and a clearer next step, keeping everything entirely judgment-free.</p>
           </div>
+
+          <div class="muni-art-container">
+            <!-- We removed the background box entirely -->
+            
+            
+            <div class="muni-avatar-wrapper">
+              <img class="muni-character-base" src="assets/images/MUNI_default.png" alt="Muni" />
+            </div>
+
+            <!-- Static hitboxes that catch the mouse -->
+            <div class="outfit-hitbox h-1" data-target="o-1"></div>
+            <div class="outfit-hitbox h-2" data-target="o-2"></div>
+            <div class="outfit-hitbox h-3" data-target="o-3"></div>
+            <div class="outfit-hitbox h-4" data-target="o-4"></div>
+
+            <!-- The visual clothes that fly -->
+            <div class="floating-outfit o-1" id="o-1"><div class="outfit-animator a-1"><img src="assets/images/Spooky_Ghost_Sheet.webp" alt="Ghost" /></div></div>
+            <div class="floating-outfit o-2" id="o-2"><div class="outfit-animator a-2"><img src="assets/images/Explorer vest.webp" alt="Explorer" /></div></div>
+            <div class="floating-outfit o-3" id="o-3"><div class="outfit-animator a-3"><img src="assets/images/Green jumper.webp" alt="Green Jumper" /></div></div>
+            <div class="floating-outfit o-4" id="o-4"><div class="outfit-animator a-4"><img src="assets/images/Yellow vest.webp" alt="Yellow Vest" /></div></div>
+          </div>
+
+          <div class="immersive-text-right">
+            <ul class="muni-immersive-list">
+              <li>
+                <strong>Voice or Chat</strong>
+                <span>Speak softly or type when words feel hard to start.</span>
+              </li>
+              <li>
+                <strong>Journal Summaries</strong>
+                <span>Get gentle reflections on your daily entries.</span>
+              </li>
+              <li>
+                <strong>Custom Outfits</strong>
+                <span>Personalize Muni by collecting new clothes.</span>
+              </li>
+            </ul>
+          </div>
+
         </div>
       </section>
-
       <section class="feature-section" id="features" aria-labelledby="features-title">
         <div class="section-heading reveal">
           <p class="eyebrow">Inside the app</p>
           <h2 id="features-title">Every feature has a gentle job.</h2>
         </div>
-        <div class="feature-grid">
-          <article class="feature-card reveal tilt-card">
-            <span class="feature-number">01</span>
-            <div class="feature-media">
-              <img src="assets/images/Tala_Star.png" alt="" />
+        <div class="interactive-container">
+          <div class="interactive-menu">
+            <button class="feature-tab active" data-target="feat-1">
+              <span class="tab-num">01</span> Private Journal
+            </button>
+            <button class="feature-tab" data-target="feat-2">
+              <span class="tab-num">02</span> Mood Check-ins
+            </button>
+            <button class="feature-tab" data-target="feat-3">
+              <span class="tab-num">03</span> Voice & Chat
+            </button>
+            <button class="feature-tab" data-target="feat-4">
+              <span class="tab-num">04</span> Gentle Play
+            </button>
+            <button class="feature-tab" data-target="feat-5">
+              <span class="tab-num">05</span> Wellness Resets
+            </button>
+            <button class="feature-tab" data-target="feat-6">
+              <span class="tab-num">06</span> Wellness Library
+            </button>
+            <button class="feature-tab" data-target="feat-7">
+              <span class="tab-num">07</span> Consultation
+            </button>
+          </div>
+          <div class="interactive-content">
+            
+            <div class="feature-pane active" id="feat-1">
+              <div class="pane-text">
+                <h3>A Safe Space to Write</h3>
+                <p>Pour your thoughts into a private journal. Try the mini journal here to feel the soft, supportive environment of the app.</p>
+              </div>
+              <div class="pane-media" style="align-items: stretch;">
+                <div class="interactive-journal-pad">
+                  <div class="pad-header">
+                    <span class="pad-date">Today's Reflection</span>
+                  </div>
+                  <textarea id="mini-journal-input" placeholder="What's on your mind? Take a deep breath and start softly..."></textarea>
+                  <button id="mini-journal-btn" class="pad-save">Save to your stars</button>
+                  <div id="mini-journal-response" class="pad-response"></div>
+                </div>
+              </div>
             </div>
-            <h3>Daily mood check-ins</h3>
-            <p>Track how you feel and collect Tala rewards for showing up, even on quiet days.</p>
-          </article>
-          <article class="feature-card reveal tilt-card">
-            <span class="feature-number">02</span>
-            <div class="feature-media">
-              <img src="assets/images/MUNI_default.png" alt="" />
-            </div>
-            <h3>Muni journal support</h3>
-            <p>Write privately with a companion that can reflect, summarize, and help name what feels heavy.</p>
-          </article>
-          <article class="feature-card reveal tilt-card">
-            <span class="feature-number">03</span>
-            <div class="feature-media">
-              <img src="assets/images/book_sample.png" alt="" />
-            </div>
-            <h3>Wellness library</h3>
-            <p>Read supportive books and short resources, with reading progress and achievements built in.</p>
-          </article>
-          <article class="feature-card reveal tilt-card">
-            <span class="feature-number">04</span>
-            <div class="feature-media">
-              <img src="assets/images/microphone_sample.png" alt="" />
-            </div>
-            <h3>Consultation paths</h3>
-            <p>Schedule peer or professional support with clearer appointment flows for students.</p>
-          </article>
-        </div>
-      </section>
 
-      <section class="muni-section reveal" id="muni" aria-labelledby="muni-title">
-        <div class="muni-art" aria-label="Muni companion scene">
-          <span class="muni-message message-one">I'm here with you.</span>
-          <span class="muni-message message-two">One softer step.</span>
-          <img class="muni-character" src="assets/images/MUNI_default.png" alt="Muni, the Bawat Tala companion" />
-          <img class="muni-island" src="assets/images/island_sample.png" alt="" />
-        </div>
-        <div class="muni-copy">
-          <p class="eyebrow">Meet Muni</p>
-          <h2 id="muni-title">A companion for reflection, not judgment.</h2>
-          <p>
-            Muni helps students turn scattered thoughts into gentler summaries, suggested journal tags, and a clearer
-            next step. It keeps the app feeling personal while reminding users that professional help is available.
-          </p>
-          <ul class="check-list">
-            <li>Journal summaries after writing</li>
-            <li>Concern tags for support workflows</li>
-            <li>Soft prompts when words feel hard to start</li>
-          </ul>
-        </div>
-      </section>
+            <div class="feature-pane" id="feat-2">
+              <div class="pane-text">
+                <h3>Track Your Mood</h3>
+                <p>Log how you feel each day, view your emotional calendar, and collect Tala rewards even on quiet days.</p>
+              </div>
+              <div class="pane-media">
+                <img src="assets/images/Joy.gif" alt="" />
+              </div>
+            </div>
 
-      <section class="community-section" id="community" aria-labelledby="community-title">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Fandom corner</p>
-          <h2 id="community-title">Small stars, shared stories.</h2>
-        </div>
-        <div class="community-layout">
-          <article class="quote-panel reveal">
-            <img src="assets/images/bottle_sample.png" alt="" />
-            <span>Message from the tide</span>
-            <p id="rotating-quote">Small steps still count, especially on heavy days.</p>
-          </article>
-          <div class="fan-grid">
-            <div class="fan-tile reveal">
-              <img src="assets/images/Tala_Star.png" alt="" />
-              <strong>Tala streaks</strong>
-              <span>Celebrate gentle consistency.</span>
+            <div class="feature-pane" id="feat-3">
+              <div class="pane-text">
+                <h3>Muni voice & chat</h3>
+                <p>Write or talk privately with a companion that can listen, reflect, summarize, and help name what feels heavy.</p>
+              </div>
+              <div class="pane-media">
+                <img src="assets/images/Dear Muni.webp" alt="" />
+              </div>
             </div>
-            <div class="fan-tile reveal">
-              <img src="assets/images/MUNI_default.png" alt="" />
-              <strong>Muni outfits</strong>
-              <span>Collect and customize your companion.</span>
+
+            <div class="feature-pane" id="feat-4">
+              <div class="pane-text">
+                <h3>Gentle mini-games</h3>
+                <p>Play soft, distracting puzzles and games when you just need a mental break from your studies.</p>
+              </div>
+              <div class="pane-media">
+                <img src="assets/images/Muni_Thinking.webp" alt="" />
+              </div>
             </div>
-            <div class="fan-tile reveal">
-              <img src="assets/images/bottle_sample.png" alt="" />
-              <strong>Message bottles</strong>
-              <span>Leave kind notes for future you.</span>
+
+            <div class="feature-pane" id="feat-5">
+              <div class="pane-text">
+                <h3>Wellness resets</h3>
+                <p>Immediate access to breathing exercises and grounding techniques for when things feel overwhelming.</p>
+              </div>
+              <div class="pane-media">
+                <img src="assets/images/A softer minute.webp" alt="" />
+              </div>
             </div>
-            <div class="fan-tile reveal">
-              <img src="assets/images/guidancelogo_sample.png" alt="" />
-              <strong>Campus support</strong>
-              <span>Connect to guidance when needed.</span>
+
+            <div class="feature-pane" id="feat-6">
+              <div class="pane-text">
+                <h3>Wellness library</h3>
+                <p>Read supportive books and short resources, with reading progress and achievements built in.</p>
+              </div>
+              <div class="pane-media">
+                <img src="assets/images/Library glow.webp" alt="" />
+              </div>
             </div>
+
+            <div class="feature-pane" id="feat-7">
+              <div class="pane-text">
+                <h3>Consultation paths</h3>
+                <p>Schedule peer or professional support with clearer appointment flows for students.</p>
+              </div>
+              <div class="pane-media">
+                <img src="assets/images/Asked for support.webp" alt="" />
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
+  
+
+      
+
+      
 
       <section class="download-section reveal" id="download" aria-labelledby="download-title">
         <div class="download-copy">
@@ -202,10 +258,10 @@
             Bring the app with you for daily reflection, Muni check-ins, wellness tools, reading, and campus support
             whenever you need a little room to breathe.
           </p>
-          <div class="release-steps" aria-label="What the app includes">
+                    <div class="release-steps" aria-label="What the app includes">
             <span>Private journal</span>
-            <span>Daily Tala rewards</span>
-            <span>Consultation scheduling</span>
+            <span>Muni Voice Chat</span>
+            <span>Gentle Mini-games</span>
           </div>
         </div>
         <div class="download-panel">
@@ -220,16 +276,93 @@
           >
             Download Android APK
           </a>
-          <p class="download-note">Android install package for Bawat Tala.</p>
+          <p class="download-note">Android install package for Bawat Tala. Built for students, absolutely free.</p>
         </div>
       </section>
-    </main>
 
-    <footer class="site-footer">
-      <span>Bawat Tala</span>
-      <span>A softer space for your thoughts.</span>
-    </footer>
+      
+    <footer class="journal-feature-section faq-footer" id="faq" style="margin-top: -60px; padding-top: 160px; padding-bottom: 120px; background: linear-gradient(to bottom, transparent 0%, #e6f4f1 150px, #cde6df 100%); border: none;">
+      <div class="journal-spread reveal" style="box-shadow: 0 32px 64px rgba(11, 147, 117, 0.15); background: #fdfaf6;">
+        <div class="journal-binding"></div>
+        
+        <div class="journal-page left-page">
+          <div class="journal-content">
+            <span class="journal-date">Frequently Asked Questions</span>
+            
+            <div class="muni-prompt-container">
+              <img src="assets/images/Dear Muni.webp" alt="Muni" class="muni-avatar-small" />
+              <h2 id="faq-typing-text" class="muni-typing"></h2>
+            </div>
+
+            
+              
+              
+              <div class="faq-list">
+                
+                
+                <details class="faq-item" name="faq">
+                  <summary>How do I log into the mobile app?</summary>
+                  <p>After downloading the APK, open Bawat Tala and enter the student credentials you registered with to access your personal space.</p>
+                </details>
+                <details class="faq-item" name="faq">
+                  <summary>How do I create an account?</summary>
+                  <p>To keep the community safe, registration requires your student ID. Simply tap 'Register' in the app and upload a clear photo of your PLV ID (front). The app will securely scan your details. Then, just enter your email, set a password, and verify it with the OTP sent to your inbox.</p>
+                </details>
+                <details class="faq-item" name="faq">
+                  <summary>Is Bawat Tala free to use?</summary>
+                  <p>Yes, the app is built exclusively for students and is entirely free to download and use.</p>
+                </details>
+                <details class="faq-item" name="faq">
+                  <summary>Are my journal entries private?</summary>
+                  <p>Absolutely. Your entries are stored safely and confidentially. Muni reads them only to provide you with soft reflections.</p>
+                </details>
+</div>
+          </div>
+        </div>
+
+        <div class="journal-page right-page" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div class="journal-content">
+            <h3 class="right-page-title">Directory</h3>
+            <p class="right-page-sub">Official links and support.</p>
+            
+            <div class="footer-journal-links">
+              <a href="privacy-policy.html" class="journal-link-item">
+                <strong>Privacy Policy</strong>
+                <span>How we protect your space</span>
+              </a>
+              <a href="terms.html" class="journal-link-item">
+                <strong>Terms of Service</strong>
+                <span>Guidelines for the app</span>
+              </a>
+              <a href="contact.html" class="journal-link-item">
+                <strong>Contact Us</strong>
+                <span>Reach out for support</span>
+              </a>
+            </div>
+          </div>
+          
+          <div class="footer-journal-bottom">
+            <img src="assets/images/Tala_Star.png" alt="Tala Star" class="footer-star" />
+            <div class="footer-brand-text">
+              <strong>Bawat Tala</strong>
+              <span>A softer space for your thoughts.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      
+    
+      
+    
+      <div class="footer-copyright" style="text-align: center; margin-top: 40px; color: #1a2f2b; font-size: 13px; font-weight: 700; letter-spacing: 1px; opacity: 0.6;">
+        &copy; 2026 BAWAT TALA. ALL RIGHTS RESERVED.
+      </div>
+</footer>
 
     <script src="script.js"></script>
   </body>
 </html>
+
+
+
