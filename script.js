@@ -8,7 +8,7 @@ const apkDownloadLinks = document.querySelectorAll("[data-apk-download]");
 const revealItems = document.querySelectorAll(".reveal");
 const tiltCards = document.querySelectorAll(".tilt-card");
 const motionAllowed = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-const apkDownloadUrl = "https://drive.google.com/file/d/15pxspAi81wSrqH_HUuQAOCyPeV8d36X7/view?usp=drive_link";
+const apkDownloadUrl = "https://drive.google.com/file/d/13u65qMGvtVIZIT2ULHI4uqakduDmhXAH/view?usp=sharing";
 
 const quotes = [
   "Small steps still count, especially on heavy days.",
@@ -301,3 +301,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+// Dismiss mobile navigation when clicking outside header
+document.addEventListener("click", (event) => {
+  const headerElem = document.querySelector(".site-header");
+  const menuBtnElem = document.querySelector(".menu-button");
+  if (headerElem && headerElem.classList.contains("nav-open") && !headerElem.contains(event.target)) {
+    headerElem.classList.remove("nav-open");
+    menuBtnElem?.setAttribute("aria-expanded", "false");
+  }
+});
