@@ -53,10 +53,15 @@ if ("IntersectionObserver" in window) {
         }
       });
     },
-    { rootMargin: "0px 0px -12% 0px", threshold: 0.16 },
+    { rootMargin: "0px 0px 50px 0px", threshold: 0.01 },
   );
 
   revealItems.forEach((item) => revealObserver.observe(item));
+
+  // Fallback safety to guarantee elements reveal even if observer is delayed
+  setTimeout(() => {
+    revealItems.forEach((item) => item.classList.add("is-visible"));
+  }, 1000);
 
   const sectionObserver = new IntersectionObserver(
     (entries) => {
@@ -69,7 +74,7 @@ if ("IntersectionObserver" in window) {
         });
       });
     },
-    { rootMargin: "-35% 0px -50% 0px", threshold: 0.1 },
+    { rootMargin: "-20% 0px -50% 0px", threshold: 0.05 },
   );
 
   document.querySelectorAll("main section[id]").forEach((section) => sectionObserver.observe(section));
